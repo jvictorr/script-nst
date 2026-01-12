@@ -26,7 +26,6 @@ O script espera uma estrutura de pastas específica para encontrar as imagens. *
 seu_projeto/
 │
 ├── transferencia.py      # O arquivo principal do script
-├── data.csv              # (Gerado automaticamente após rodar)
 │
 └── dados/                # Crie esta pasta principal
     ├── conteudo/         # Coloque suas fotos originais aqui (ex: foto.jpg)
@@ -39,7 +38,7 @@ seu_projeto/
 ## 🚀 Como Rodar
 
 ### 1. Execução Rápida (Padrão)
-Se você tiver uma imagem chamada'arco.jpg'na pasta'conteudo'e'starry.jpg'na pasta'estilo`, basta rodar:
+Se você tiver uma imagem chamada 'arco.jpg' na pasta 'conteudo' e 'starry.jpg' na pasta 'estilo', basta rodar:
 
 ```bash
 python transferencia.py
@@ -52,13 +51,13 @@ Para usar arquivos com nomes diferentes:
 ```bash
 python transferencia.py --conteudo "minha_foto.jpg" --estilo "monet.jpg"
 ```
-*(Nota: Os arquivos devem estar dentro das pastas'dados/conteudo'e'dados/estilo'respectivamente).*
+*(Nota: Os arquivos devem estar dentro das pastas 'dados/conteudo' e 'dados/estilo' respectivamente).*
 
 ### 3. Ajustando a Intensidade
 Para mudar o equilíbrio entre a foto original e o estilo artístico:
 
-* **Mais Estilo:** Aumente o'--peso_estilo'(ex:'10000000').
-* **Mais Conteúdo Original:** Diminua o'--peso_estilo'(ex:'100000').
+* **Mais Estilo:** Aumente o '--peso_estilo' (ex: '10000000').
+* **Mais Conteúdo Original:** Diminua o '--peso_estilo' (ex: '100000').
 
 ```bash
 python transferencia.py --peso_estilo 10000000
@@ -77,13 +76,13 @@ python transferencia.py --epocas 2000 --rede vgg19
 
 | Argumento | Descrição | Valor Padrão |
 | :--- | :--- | :--- |
-|'--conteudo'| Nome do arquivo da imagem de conteúdo |'arco.jpg'|
-|'--estilo'| Nome do arquivo da imagem de estilo |'starry.jpg'|
-|'--rede'| Modelo neural ('vgg16','vgg19','alexnet') |'vgg16'|
-|'--epocas'| Número de iterações do treinamento |'500'|
-|'--peso_estilo'| Intensidade do estilo artístico |'5e5'(500.000) |
-|'--peso_conteudo`| Intensidade da preservação da foto |'1'|
-|'--otimizador'| Algoritmo ('LBFGS'ou'Adam') |'LBFGS'|
+| '--conteudo' | Nome do arquivo da imagem de conteúdo | 'arco.jpg' |
+| '--estilo' | Nome do arquivo da imagem de estilo | 'starry.jpg' |
+| '--rede' | Modelo neural ('vgg16','vgg19','alexnet') | 'vgg16' |
+| '--epocas' | Número de iterações do treinamento | '500' |
+| '--peso_estilo' | Intensidade do estilo artístico | '5e5' (500.000) |
+| '--peso_conteudo' | Intensidade da preservação da foto | '1' |
+| '--otimizador' | Algoritmo ('LBFGS' ou 'Adam') | 'LBFGS' |
 
 ---
 
@@ -91,6 +90,6 @@ python transferencia.py --epocas 2000 --rede vgg19
 
 Ao final da execução, o script gera:
 
-1.  **Imagem Final:** Salva em'dados/saida/'com o nome combinado (ex:'foto_pintura.jpg').
+1.  **Imagem Final:** Salva em 'dados/saida/' com o nome combinado (ex: 'foto_pintura.jpg').
 2.  **Visualização:** Uma janela gráfica mostrando a evolução do processo.
-3.  **Logs:** Um arquivo'data.csv'contendo o histórico das perdas (losses) de estilo e conteúdo para análise.
+3.  **Logs:** Um arquivo 'data.csv' contendo o histórico das perdas (losses) de estilo e conteúdo para análise.
