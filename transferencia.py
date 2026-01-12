@@ -345,7 +345,8 @@ def estilizar_imagem(argumentos):
 
     # Salva imagem e dados
     fig, ax = plt.subplots()
-    image_save(output, os.path.join(argumentos["caminho_saida"],argumentos["conteudo"]+"_"+argumentos["estilo"]+".jpg"))
+    output_image_name = argumentos["conteudo"].split('.')[0]+"_"+argumentos["estilo"].split('.')[0]+".jpg"
+    image_save(output, os.path.join(argumentos["caminho_saida"],output_image_name))
 
     # Salva histórico de perda em CSV
     dict_loss = {'style_loss':s_loss,'content_loss':c_loss}
